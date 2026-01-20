@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Miles Per Gallon Calculator</h1>
+<p>Find your fuel efficiancy</p>
+
+<form method="post">
+    <label for="milesDriven">Miles Driven:</label>
+    <input type ="double" id="milesDriven" name="milesDriven" required min="0" />
+    <label for="gallonsUsed">Gallons Used:</label>
+    <input type ="double" id="gallonsUsed" name="gallonsUsed" required min="0" />
+    <button type="submit">Calculate</button>
+</form>
+@if (Model.showResult)
+{
+    <p>Your fuel efficiancy is @Model.mPG miles per gallon</p>
+}
+@if (Model.errorMessage != null)
+{
+    <p>@Model.errorMessage</p>
+}

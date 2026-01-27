@@ -1,17 +1,20 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Miles Per Gallon Calculator";
 }
 
 <h1>Miles Per Gallon Calculator</h1>
 <p>Find your fuel efficiancy</p>
 
 <form method="post">
+    //create input field for miles driven
     <label for="milesDriven">Miles Driven:</label>
     <input type ="double" id="milesDriven" name="milesDriven" required min="0" />
+    //create inpue field for gallons used
     <label for="gallonsUsed">Gallons Used:</label>
     <input type ="double" id="gallonsUsed" name="gallonsUsed" required min="0" />
+    //create submit button
     <button type="submit">Calculate</button>
 </form>
 @if (Model.showResult)
